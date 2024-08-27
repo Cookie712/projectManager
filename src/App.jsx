@@ -22,7 +22,7 @@ function App() {
     }
 
     return (
-        <main className="h-screen my-8 flex gap-8">
+        <main className="min-h-screen p-10 flex gap-10 bg-gray-50">
             <ProjectsSidebar />
             {content}
         </main>

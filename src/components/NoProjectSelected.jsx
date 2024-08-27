@@ -4,25 +4,28 @@ import Button from './Button.jsx'
 import { useContext } from 'react'
 import { Projects } from '../store/projectsProvider.jsx'
 
-export default function NoProjectSelected({ onStartAddProject }) {
+export default function NoProjectSelected() {
     const { startAddProject } = useContext(Projects)
 
     return (
-        <div className="mt-24 text-center w-2/3">
+        <div className="mt-32 text-center w-2/3 mx-auto">
             <img
                 src={noProjectImage}
                 alt="An empty task list"
-                className="w-16 h-16 object-contain mx-auto"
+                className="w-20 h-20 object-contain mx-auto mb-6"
             />
-            <h2 className="text-xl font-bold text-stone-500 my-4">
+            <h2 className="text-2xl font-semibold text-gray-600 mb-4">
                 No Project Selected
             </h2>
-            <p className="text-stone-400 mb-4">
+            <p className="text-gray-500 mb-6">
                 Select a project or get started with a new one
             </p>
-            <p className="mt-8">
-                <Button onClick={startAddProject}>Create new project</Button>
-            </p>
+            <Button
+                onClick={startAddProject}
+                className="mt-6 bg-blue-600 text-white hover:bg-blue-500"
+            >
+                Create new project
+            </Button>
         </div>
     )
 }
